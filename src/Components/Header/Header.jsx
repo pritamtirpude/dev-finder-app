@@ -44,7 +44,7 @@ const Header = () => {
               animate="show"
               key={isSwitched ? "sun" : "moon"}
               exit="exit"
-              src={isSwitched ? iconSun : iconMoon}
+              src={colorMode === "light" ? iconMoon : iconSun}
               alt={isSwitched ? "Sun" : "Moon"}
             />
           </AnimatePresence>

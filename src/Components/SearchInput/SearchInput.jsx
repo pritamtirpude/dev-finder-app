@@ -1,5 +1,6 @@
 import { iconSearch } from "../../assets";
 import { toast } from "react-toastify";
+import { motion } from "framer-motion";
 
 const SearchInput = ({
   refetch,
@@ -31,13 +32,14 @@ const SearchInput = ({
           className="absolute top-[2px] left-8 md:left-4"
         />
       </div>
-      <button
+      <motion.button
+        whileTap={{ scale: 0.9 }}
         type="button"
         className="bg-[#0079ff] hover:bg-[#60abff] py-3 px-5 absolute right-2 top-2 rounded-md text-white"
         onClick={validateText}
       >
         Search
-      </button>
+      </motion.button>
     </div>
   );
 };
