@@ -6,6 +6,7 @@ import {
   iconWebsite,
 } from "../../assets";
 import { motion } from "framer-motion";
+import CountUp from "react-countup";
 
 const UserInfo = ({ userData }) => {
   return (
@@ -49,7 +50,7 @@ const UserInfo = ({ userData }) => {
         <div className="ml-32 md:ml-0">
           <motion.p
             layout
-            className="text-[#4b6a9b]  mt-[0.6rem] md:text-sm dark:text-white"
+            className="text-[#4b6a9b]  mt-[0.6rem] md:text-sm dark:text-white truncate"
           >
             {userData.bio ? userData.bio : "No bio available"}
           </motion.p>
@@ -63,7 +64,12 @@ const UserInfo = ({ userData }) => {
                 layout
                 className="text-[#2b3442] mt-3 font-bold text-xl dark:text-white"
               >
-                {userData.public_repos}
+                <CountUp
+                  start={0}
+                  end={userData.public_repos}
+                  delay={0.5}
+                  duration={0.8}
+                />
               </motion.h4>
             </div>
 
@@ -75,7 +81,12 @@ const UserInfo = ({ userData }) => {
                 layout
                 className="text-[#2b3442] mt-3 font-bold text-xl dark:text-white"
               >
-                {userData.followers}
+                <CountUp
+                  start={0}
+                  end={userData.followers}
+                  delay={0.5}
+                  duration={0.8}
+                />
               </motion.h4>
             </div>
 
@@ -87,7 +98,12 @@ const UserInfo = ({ userData }) => {
                 layout
                 className="text-[#2b3442] mt-3 font-bold text-xl dark:text-white"
               >
-                {userData.following}
+                <CountUp
+                  start={0}
+                  end={userData.following}
+                  delay={0.5}
+                  duration={0.8}
+                />
               </motion.h4>
             </div>
           </div>
@@ -147,7 +163,7 @@ const UserInfo = ({ userData }) => {
                 />
                 <motion.a
                   layout
-                  className="text-[#4b6a9b] dark:text-white"
+                  className="text-[#4b6a9b] dark:text-white w-[250px] truncate"
                   href={userData.blog}
                   target="_blank"
                 >
